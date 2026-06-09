@@ -1,0 +1,261 @@
+
+/* ── TOKENS ── */
+:root {
+  --red:        #ff3d00;
+  --red-dim:    #cc3100;
+  --red-light:  #fff0ec;
+  --red-glow:   rgba(255, 61, 0, 0.12);
+  --bg:         #ffffff;
+  --bg-off:     #f2f2f0;
+  --text:       #111111;
+  --muted:      #888888;
+  --border:     rgba(0, 0, 0, 0.10);
+  --border-dark:rgba(0, 0, 0, 0.18);
+  --font:       'AdobeClean', sans-serif;
+}
+
+/* ── GLOBAL ── */
+html, body, [class*="css"] {
+  font-family: var(--font) !important;
+}
+
+/* ── MAIN AREA BACKGROUND ── */
+.stApp {
+  background-color: var(--bg) !important;
+}
+
+/* ── SIDEBAR ── */
+[data-testid="stSidebar"] {
+  background-color: var(--bg-off) !important;
+  border-right: 1px solid var(--border-dark) !important;
+}
+[data-testid="stSidebar"] * {
+  font-family: var(--font) !important;
+}
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+  color: var(--text) !important;
+  letter-spacing: 0.02em;
+}
+[data-testid="stSidebar"] .stCaption {
+  color: var(--muted) !important;
+}
+
+/* ── LOGIN CAPTION — more visible ── */
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p,
+[data-testid="stSidebar"] .stCaption p,
+[data-testid="stSidebar"] small {
+  color: var(--text) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  background: var(--red-light) !important;
+  border-left: 3px solid var(--red) !important;
+  padding: 6px 10px !important;
+  display: block !important;
+}
+
+/* ── SELECTBOX — pointer cursor ── */
+[data-testid="stSelectbox"],
+[data-testid="stSelectbox"] > div,
+[data-testid="stSelectbox"] > div > div,
+[data-testid="stSelectbox"] select,
+[data-testid="stSelectbox"] [role="combobox"],
+[data-testid="stSelectbox"] [role="listbox"] {
+  cursor: pointer !important;
+}
+[data-testid="stSelectbox"] * {
+  cursor: pointer !important;
+}
+
+/* ── TITLES & HEADINGS ── */
+h1, h2, h3, h4 {
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+  letter-spacing: 0.02em;
+}
+h1 { border-bottom: 3px solid var(--red); padding-bottom: 10px; display: inline-block; }
+
+/* ── DIVIDER ── */
+hr {
+  border: none !important;
+  border-top: 1px solid var(--border-dark) !important;
+  margin: 16px 0 !important;
+}
+
+/* ── PRIMARY BUTTON (Start / End Workout) ── */
+.stButton > button[kind="primary"],
+.stButton > button {
+  background-color: var(--red) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0px !important;
+  font-family: var(--font) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 12px 24px !important;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+  box-shadow: none !important;
+}
+.stButton > button:hover {
+  background-color: var(--red-dim) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px var(--red-glow) !important;
+}
+.stButton > button:active {
+  transform: translateY(0) !important;
+}
+
+/* ── SELECTBOX ── */
+[data-testid="stSelectbox"] > div > div {
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0px !important;
+  background: var(--bg) !important;
+  font-family: var(--font) !important;
+  color: var(--text) !important;
+}
+[data-testid="stSelectbox"] > div > div:focus-within {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 2px var(--red-glow) !important;
+}
+
+/* ── NUMBER INPUT ── */
+[data-testid="stNumberInput"] input {
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 0px !important;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+}
+[data-testid="stNumberInput"] input:focus {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 2px var(--red-glow) !important;
+}
+[data-testid="stNumberInput"] button {
+  border-radius: 0px !important;
+  border-color: var(--border-dark) !important;
+  background: var(--bg-off) !important;
+  color: var(--text) !important;
+}
+[data-testid="stNumberInput"] button:hover {
+  background: var(--red-light) !important;
+  border-color: var(--red) !important;
+  color: var(--red) !important;
+}
+
+/* ── METRIC CARDS ── */
+[data-testid="stMetric"] {
+  background: var(--bg-off) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-left: 3px solid var(--red) !important;
+  border-radius: 0px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 8px !important;
+}
+[data-testid="stMetricLabel"] {
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+}
+[data-testid="stMetricValue"] {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+}
+
+/* ── INFO / SUCCESS / WARNING BOXES ── */
+[data-testid="stAlert"] {
+  border-radius: 0px !important;
+  border-left-width: 3px !important;
+  font-family: var(--font) !important;
+}
+/* Success box (coach feedback) */
+.stSuccess, [data-baseweb="notification"][kind="positive"] {
+  background: #fff8f6 !important;
+  border-left-color: var(--red) !important;
+  color: var(--text) !important;
+  border-radius: 0px !important;
+}
+/* Info box */
+.stInfo, [data-baseweb="notification"][kind="info"] {
+  background: var(--bg-off) !important;
+  border-left-color: var(--text) !important;
+  border-radius: 0px !important;
+}
+
+/* ── TABLE (workout history) ── */
+[data-testid="stTable"] table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  font-family: var(--font) !important;
+  font-size: 13px !important;
+}
+[data-testid="stTable"] th {
+  background: var(--text) !important;
+  color: #ffffff !important;
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 10px 14px !important;
+  border: none !important;
+  font-weight: 700 !important;
+}
+[data-testid="stTable"] td {
+  padding: 10px 14px !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+[data-testid="stTable"] tr:hover td {
+  background: var(--red-light) !important;
+}
+
+/* ── WORKOUT PLAN INFO BOX (sidebar st.info) ── */
+[data-testid="stSidebar"] [data-testid="stAlert"] {
+  background: var(--red-light) !important;
+  border-left: 3px solid var(--red) !important;
+  border-radius: 0px !important;
+  color: var(--text) !important;
+}
+
+/* ── PLACEHOLDER BOX (no workout started) ── */
+div[style*="dashed"] {
+  border-color: var(--border-dark) !important;
+  background: var(--bg-off) !important;
+}
+
+/* ── WEBRTC STREAMER CONTAINER ── */
+[data-testid="stIFrame"],
+iframe {
+  border: 2px solid var(--border-dark) !important;
+  border-radius: 0px !important;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-off); }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 0px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+/* ── CAPTION / SMALL TEXT ── */
+.stCaption, small, [data-testid="stCaptionContainer"] {
+  color: var(--muted) !important;
+  font-family: var(--font) !important;
+  font-size: 12px !important;
+}
+
+/* ── SUBHEADER ── */
+[data-testid="stSidebar"] h3,
+.stSubheader {
+  font-size: 13px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
